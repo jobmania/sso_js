@@ -15,6 +15,7 @@ let responseData;  // 응답값 저장용
 
             function init() {
                 console.info('SSAM SSO Module initialized.');
+                alert("응앙앵");
                 return _utils;
             }
             function receiverToken(token){
