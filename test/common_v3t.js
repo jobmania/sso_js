@@ -15,11 +15,11 @@ let responseData;  // 응답값 저장용
 
             function init() {
                 console.info('SSAM SSO Module initialized.');
-                alert("응앙앵");
+                alert("init");
                 return _utils;
             }
             function receiverToken(token){
-                console.log("receiverToken",token)
+                alert("receiverToken",token);
                 sendServer(token);
             }
             function sendServer(token) {
