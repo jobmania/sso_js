@@ -19,11 +19,11 @@ let responseData;  // 응답값 저장용
                 return _utils;
             }
             function receiverToken(token){
-                alert("receiverToken",token);
+                alert("receiverToken : "+ token);
                 sendServer(token);
             }
             function sendServer(token) {
-                alert("sendServer",token);
+                alert("sendServer : " + token);
                 $.ajax({
                     type: 'GET',
                     url: host + '/ssam/student?code='+token,
@@ -37,7 +37,8 @@ let responseData;  // 응답값 저장용
                         if (data != null && data['code'] == 200) {
                             const event = new CustomEvent('receiverToken', { detail: data['data']});
                             document.dispatchEvent(event);
-                            responseData = data['data']
+                            responseData = JSON.stringify(data['data'])
+                            alert("데이터 :  " + responseData)
                             // 데이터를 h2 엘리먼트에 표시
                             // $('h2').text(JSON.stringify(data['data']));
                             // console.log(JSON.stringify(data['data']))
