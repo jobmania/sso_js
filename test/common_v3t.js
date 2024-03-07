@@ -57,14 +57,3 @@ let responseData;  // 응답값 저장용
 
 
 
-        // 페이지 로딩 시 토큰 확인
-        $(document).ready(function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const token = urlParams.get('token');
-
-            if (token) {
-                console.log('Token found in URL:', token);
-                // 모듈에 토큰 전달
-                SSAM.receiverToken(token);
-            }
-         });

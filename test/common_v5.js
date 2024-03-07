@@ -1,4 +1,4 @@
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 var SSAM = (function () {
     'SSAM SSO Module';
 
@@ -33,6 +33,7 @@ var SSAM = (function () {
                 xhr.setRequestHeader("X-AppKey", 'ahsl2do2q_ma');
             },
             success: function (data) {
+                 alert("메시지 응답완료 ")
                 if (data != null && data['code'] == 200) {
                     const event = new CustomEvent('receiverToken', { detail: data['data']});
                     document.dispatchEvent(event);
@@ -42,9 +43,9 @@ var SSAM = (function () {
     }
     function listener(callback) {
         document.addEventListener('receiverToken', function (event) {
+            alert("Input listener");
             const result = event.detail;
             callback(result);
-            alert("listener");
         });
     }
 })();

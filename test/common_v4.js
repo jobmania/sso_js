@@ -33,7 +33,7 @@ var SSAM = (function () {
                 xhr.setRequestHeader("X-AppKey", 'ahsl2do2q_ma');
             },
             success: function (data) {
-                alert("메시지 응답완료 ")
+                 alert("메시지 응답완료 ")
                 if (data != null && data['code'] == 200) {
                     const event = new CustomEvent('receiverToken', { detail: data['data']});
                     document.dispatchEvent(event);

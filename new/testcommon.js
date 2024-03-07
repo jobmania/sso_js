@@ -19,9 +19,11 @@ let responseData;  // 응답값 저장용
                 return _utils;
             }
             function receiverToken(token){
+                console.log("receiverToken",token)
                 sendServer(token);
             }
             function sendServer(token) {
+                alert("sendServer",token);
                 $.ajax({
                     type: 'GET',
                     url: host + '/ssam/student?code='+token,
@@ -31,7 +33,7 @@ let responseData;  // 응답값 저장용
                         xhr.setRequestHeader("X-AppKey", 'ahsl2do2q_ma');
                     },
                     success: function (data) {
-                        console.log("데이터!",data)
+                       alert("메시지 응답완료 ")
                         if (data != null && data['code'] == 200) {
                             const event = new CustomEvent('receiverToken', { detail: data['data']});
                             document.dispatchEvent(event);
