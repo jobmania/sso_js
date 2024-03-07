@@ -40,7 +40,7 @@ let responseData;  // 응답값 저장용
                             alert("데이터 :  " + responseData)
                             const event = new CustomEvent('receiverTest', { detail: responseData});
                             alert("event :  " + event)
-                            document.dispatchEvent(event);
+                            document.dispatchEvent(new CustomEvent('receiverTest', { detail: responseData}));
                           
                             // 데이터를 h2 엘리먼트에 표시
                             // $('h2').text(JSON.stringify(data['data']));
