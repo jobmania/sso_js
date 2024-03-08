@@ -32,7 +32,6 @@ let responseData;  // 응답값 저장용
                     success: function (data) {
                         if (data != null && data['code'] == 200) {
                             responseData = data['data'];
-                            alert("데이터 :  " + responseData)
                             const event = new CustomEvent('receiverTest', { detail: responseData});
                             document.dispatchEvent(event);
                         }
