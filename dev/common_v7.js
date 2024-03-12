@@ -39,7 +39,7 @@
                         }
                     },
                     error: function (jqXHR, textStatus, errorThrown) {
-                        alert("태블릿코드 등록안되어있음"+ token)
+                        alert("태블릿 등록 안되어있습니다. "+ token)
                         if (jqXHR.status == 400) {
                             alert('Bad Request: ' + jqXHR.responseText);
                         } else {
